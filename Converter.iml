@@ -10,7 +10,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/json-20211205.jar!/" />
+          <root url="jar://$MODULE_DIR$/external/json-20211205.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
