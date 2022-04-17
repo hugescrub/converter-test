@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import org.json.JSONObject; // external jar
+import org.json.JSONObject;
 
 public class Main {
 
