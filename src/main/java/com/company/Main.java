@@ -1,5 +1,7 @@
 package com.company;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,9 +11,9 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import org.json.JSONObject;
-
 public class Main {
+
+    public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
 
@@ -26,32 +28,25 @@ public class Main {
         double amount;
         Integer from, to;
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the currency converter...");
 
+        Validator validator = new Validator();
+
+        System.out.println("Welcome to the currency converter...");
         System.out.println("Converting from");
         System.out.println("1.USD \t 2.EUR \t 3.RUB");
-        from = scanner.nextInt();
 
-        // check for valid input
-        while(from < 1 || from > 3){
-            System.out.println("Only 1-3 codes are available, try again.");
-            System.out.println("1.USD \t 2.EUR \t 3.RUB");
-            from = scanner.nextInt();
-        }
-        fromCode = currencyCodes.get(from);
+        from = scanner.nextInt();
+        validator.getFromCode(from); // check for valid input
+
+        fromCode = currencyCodes.get(validator.getFrom());
 
         System.out.println("Converting to");
         System.out.println("1.USD \t 2.EUR \t 3.RUB");
-        to = scanner.nextInt();
 
-        // check for valid input
-        while(to < 1 || to > 3){
-            System.out.println("Only 1-3 codes are available, try again.");
-            System.out.println("1.USD \t 2.EUR \t 3.RUB");
-            to = scanner.nextInt();
-        }
-        toCode = currencyCodes.get(to);
+        to = scanner.nextInt();
+        validator.getToCode(to); // check for valid input
+
+        toCode = currencyCodes.get(validator.getTo());
 
         System.out.println("Enter the amount you'd like to convert...");
         amount = scanner.nextFloat();
