@@ -32,21 +32,14 @@ public class Main {
         Validator validator = new Validator();
 
         System.out.println("Welcome to the currency converter...");
-        System.out.println("Converting from");
-        System.out.println("1.USD \t 2.EUR \t 3.RUB");
 
-        from = scanner.nextInt();
-        validator.getFromCode(from); // check for valid input
+        validator.getFromCode(); // input FROM code
 
-        fromCode = currencyCodes.get(validator.getFrom());
+        fromCode = currencyCodes.get(validator.getFrom()); // get code
 
-        System.out.println("Converting to");
-        System.out.println("1.USD \t 2.EUR \t 3.RUB");
+        validator.getToCode(); // input TO code
 
-        to = scanner.nextInt();
-        validator.getToCode(to); // check for valid input
-
-        toCode = currencyCodes.get(validator.getTo());
+        toCode = currencyCodes.get(validator.getTo()); // get code
 
         System.out.println("Enter the amount you'd like to convert...");
         amount = scanner.nextFloat();

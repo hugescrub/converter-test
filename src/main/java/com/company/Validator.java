@@ -7,26 +7,30 @@ public class Validator {
     private Integer from;
     private Integer to;
 
-    public Integer getToCode(Integer to){
+    public void getToCode(){
+
+        System.out.println("Converting to");
+        System.out.println("1.USD \t 2.EUR \t 3.RUB");
+        to = scanner.nextInt();
 
         while(to < 1 || to > 3){
             System.out.println("Only 1-3 codes are available, try again.");
             System.out.println("1.USD \t 2.EUR \t 3.RUB");
             to = scanner.nextInt();
-            this.to = to;
         }
-        return this.to;
     }
 
-    public Integer getFromCode(Integer from){
+    public void getFromCode(){
+
+        System.out.println("Converting from");
+        System.out.println("1.USD \t 2.EUR \t 3.RUB");
+        from = scanner.nextInt();
 
         while(from < 1 || from > 3){
             System.out.println("Only 1-3 codes are available, try again.");
             System.out.println("1.USD \t 2.EUR \t 3.RUB");
             from = scanner.nextInt();
-            this.from = from;
         }
-        return this.from;
     }
 
     public Integer getFrom() {
